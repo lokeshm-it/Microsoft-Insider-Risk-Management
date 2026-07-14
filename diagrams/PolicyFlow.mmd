@@ -1,0 +1,40 @@
+flowchart TD
+    subgraph Template["Policy Template"]
+        T1[Data Leaks Quick Policy]
+    end
+
+    subgraph Scope["Scope"]
+        S1[All Users, Groups & Adaptive Scopes]
+    end
+
+    subgraph Priority["Content Prioritization"]
+        P1[SharePoint Site: Team Site]
+        P2[Sensitive Info Type: Credit Card Number]
+        P3[Sensitivity Labels]
+        P4[File Extensions]
+        P5[Trainable Classifiers]
+    end
+
+    subgraph Trigger["Triggering Event"]
+        TR1[User performs an exfiltration activity]
+        TR2["8/24 activities selected<br/>(email attachments, USB, printing, browser upload)"]
+        TR3[Built-in trigger thresholds - Recommended]
+    end
+
+    subgraph Indicators["Indicators & Detection"]
+        I1[74/126 indicators selected]
+        I2[Sequence detection - Select all]
+        I3[Tenant-specific indicator thresholds - Recommended]
+    end
+
+    subgraph Outcome["Policy Outcome"]
+        O1[Policy Status: Healthy]
+        O2[Activity Scoring: Test User 1, 5 days]
+    end
+
+    T1 --> S1 --> Priority
+    Priority --> Trigger
+    Trigger --> Indicators
+    Indicators --> Outcome
+    TR1 --> TR2 --> TR3
+    I1 --> I2 --> I3

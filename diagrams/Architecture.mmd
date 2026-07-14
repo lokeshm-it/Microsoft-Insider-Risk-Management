@@ -1,0 +1,35 @@
+flowchart TB
+    subgraph Sources["Signal Sources"]
+        AUDIT[Microsoft 365 Unified Audit Log]
+        MDE[Microsoft Defender for Endpoint]
+        ENTRA[Microsoft Entra ID Protection]
+        DLP[Data Loss Prevention Alerts]
+    end
+
+    subgraph Purview["Microsoft Purview — Insider Risk Management"]
+        ANALYTICS[Analytics Engine<br/>Daily scans + real-time insights]
+        SETTINGS[Solution Settings<br/>Privacy, Indicators, Intelligent Detections, Domains]
+        RBAC[Role Groups<br/>Admins, Analysts, Investigators, Approvers, Auditors]
+        POLICY["Data Leaks Insider Risk Policy<br/>Trigger: Exfiltration Activity<br/>Indicators: 74/126<br/>Status: Healthy"]
+        SCORING[Risk Scoring Engine]
+        ALERTS[Alerts: Low / Medium / High]
+    end
+
+    subgraph Scope["Policy Scope"]
+        USERS["All Users, Groups & Adaptive Scopes"]
+        CONTENT["Priority Content:<br/>Team Site (SharePoint)<br/>Credit Card Number (SIT)"]
+    end
+
+    AUDIT --> ANALYTICS
+    MDE --> ANALYTICS
+    ENTRA --> ANALYTICS
+    DLP --> ANALYTICS
+
+    ANALYTICS --> POLICY
+    SETTINGS --> POLICY
+    USERS --> POLICY
+    CONTENT --> POLICY
+    POLICY --> SCORING
+    SCORING --> ALERTS
+    RBAC -.governs access to.-> ALERTS
+    RBAC -.governs access to.-> POLICY
