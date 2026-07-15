@@ -102,7 +102,7 @@ flowchart TB
     RBAC -.governs access to.-> POLICY
 ```
 
-See [`diagrams/Architecture.mmd`](diagrams/Architecture.mmd) for the standalone diagram source.
+See [`architecture/Architecture.mmd`](architecture/Architecture.mmd) for the standalone diagram source.
 
 ---
 
@@ -363,7 +363,7 @@ Project-17-Microsoft-Insider-Risk-Management/
 ├── images/
 │   └── (30 screenshots, 01–30, referenced throughout this README)
 │
-└── diagrams/
+└── architecture/
     ├── Architecture.mmd
     ├── Workflow.mmd
     └── PolicyFlow.mmd
