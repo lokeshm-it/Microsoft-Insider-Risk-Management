@@ -19,7 +19,7 @@ This repository documents a specific, evidence-backed lab implementation of Micr
 - Every configuration claim in `README.md` and `docs/` must reference a specific screenshot in `images/`.
 - If a configuration detail is not visible in available evidence, it must be explicitly marked as **"Not configured in this lab"** rather than assumed or invented.
 - PowerShell scripts in `scripts/` should include comment-based help, parameter validation, and error handling consistent with the existing scripts.
-- Mermaid diagrams in `diagrams/` should stay synchronized with any changes to the documented architecture or workflow.
+- Mermaid diagrams in `architecture/` should stay synchronized with any changes to the documented architecture or workflow.
 
 ## Code of Conduct
 
