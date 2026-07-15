@@ -381,3 +381,8 @@ data-security  purview-compliance  insider-threat
 ---
 
 *Documentation authored as part of a Microsoft 365 / Purview enterprise infrastructure portfolio. All configuration steps and outputs are sourced directly from 30 lab screenshots — no configuration in this document was fabricated or assumed beyond what is explicitly noted. A full, exhaustive step-by-step SOP (with expanded rationale for every option) is available in [`docs/Implementation-Guide.md`](docs/Implementation-Guide.md).*
+
+
+## Disclaimer
+
+This repository documents a Microsoft 365 / Microsoft Purview lab configuration for portfolio and educational purposes. Screenshots and configuration references relate to a non-production, sandbox tenant (securem365lsb.onmicrosoft.com) and test accounts only. No production customer data, credentials, or secrets are included in this repository.
